@@ -110,6 +110,7 @@ if ($_POST["evento"] == "Destinos") {
 
     <section id="registration" class="container">
         <table class="table table-striped">
+
         <?php
             foreach ($resultados as $resultado) {
                 if ($_POST["evento"] == "Restaurantes") {
@@ -122,17 +123,33 @@ if ($_POST["evento"] == "Destinos") {
                     $city = $resultado['city'];
                     $phone = $resultado['phone'];
                     $web = $resultado['web'];
-                    echo("<tr>");
-                    echo("<td>" + $name + "</td>");
-                    echo("<td>" + $description + "</td>");
-                    echo("<td>" + $address + "</td>");
-                    echo("<td>" + $email + "</td>");
-                    echo("<td>" + $historicTerritory + "</td>");
-                    echo("<td>" + $menu + "</td>");
-                    echo("<td>" + $city + "</td>");
-                    echo("<td>" + $phone + "</td>");
-                    echo("<td>" + $web + "</td>");
-                    echo("</tr>"); 
+                ?>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Dirección</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Provincia</th>
+                    <th>Precio Menú</th>
+                    <th>Teléfono</th>
+                    <th>Web</th>
+                </tr>
+                <tr>
+                    <td><?php echo($name) ?></td>
+                    <td><?php echo($description) ?></td>
+                    <td><?php echo($address) ?></td>
+                    <td><?php echo($email) ?></td>
+                    <td><?php echo($city) ?></td>
+                    <td><?php echo($historicTerritory) ?></td>
+                    <td><?php echo($menu) ?> €</td>
+                    <td><?php echo($phone) ?></td>
+                    <td><?php echo($web) ?></td>
+                </tr>
+                <tr>
+                    
+                </tr>
+                <?php
                 }
                 if ($_POST["evento"] == "Alojamientos") {
                     $name = $resultado['name'];
