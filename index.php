@@ -1,15 +1,3 @@
-<?php
-$m = new MongoClient("mongodb://alianzo:alianzo@ds047692.mongolab.com:47692/hackathon");
-$db = $m->selectDB('hackathon');
-$restaurantes = new MongoCollection($db, 'Restaurantes');
-$alojamientos = new MongoCollection($db, 'Alojamientos');
-$espacios = new MongoCollection($db, 'Espacios');
-$jovenes = new MongoCollection($db, 'Jovenes');
-$turismo = new MongoCollection($db, 'Turismo');
-$destinos = new MongoCollection($db, 'Destinos');
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,10 +60,10 @@ $destinos = new MongoCollection($db, 'Destinos');
     </section><!--/#title-->     
 
     <section id="registration" class="container">
-        <form class="center" role="form" action = "index.php" method="POST">
+        <form class="center" role="form" action = "resultados.php" method="POST">
             <fieldset class="registration-form">
                 <div class="form-group">                     
-                    <select name="provincia" id="provincia" class="form-control">
+                    <select name="evento" id="provincia" class="form-control">
                         <option>- Elegir tipo de evento -</option>
                         <option value="Jovenes">Agenda para jóvenes</option>
                         <option value="Turismo">Agenda turística</option>

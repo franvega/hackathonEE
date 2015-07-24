@@ -8,6 +8,43 @@ $jovenes = new MongoCollection($db, 'Jovenes');
 $turismo = new MongoCollection($db, 'Turismo');
 $destinos = new MongoCollection($db, 'Destinos');
 
+if ($_POST["evento"] == "Restaurantes") {
+    $cursor = $restaurantes->find(array("historicTerritory" => $_POST["provincia"]));
+    foreach ($cursor as $doc) {
+        $resultados[] = $doc;
+    }
+}
+if ($_POST["evento"] == "Alojamientos") {
+    $cursor = $alojamientos->find(array("historicTerritory" => $_POST["provincia"]));
+    foreach ($cursor as $doc) {
+        $resultados[] = $doc;
+    }
+}
+if ($_POST["evento"] == "Espacios") {
+    $cursor = $espacios->find(array("historicTerritory" => $_POST["provincia"]));
+    foreach ($cursor as $doc) {
+        $resultados[] = $doc;
+    }
+}
+if ($_POST["evento"] == "Jovenes") {
+    $cursor = $jovenes->find();
+    foreach ($cursor as $doc) {
+        $resultados[] = $doc;
+    }
+}
+if ($_POST["evento"] == "Turismo") {
+    $cursor = $turismo->find(array("historicTerritory" => $_POST["provincia"]));
+    foreach ($cursor as $doc) {
+        $resultados[] = $doc;
+    }
+}
+if ($_POST["evento"] == "Destinos") {
+    $cursor = $destinos->find(array("historicTerritory" => $_POST["provincia"]));
+    foreach ($cursor as $doc) {
+        $resultados[] = $doc;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -72,39 +109,88 @@ $destinos = new MongoCollection($db, 'Destinos');
     </section><!--/#title-->     
 
     <section id="registration" class="container">
-        <form class="center" role="form" action = "index.php" method="POST">
-            <fieldset class="registration-form">
-                <div class="form-group">                     
-                    <select name="provincia" id="provincia" class="form-control">
-                        <option>- Elegir tipo de evento -</option>
-                        <option value="Jovenes">Agenda para jóvenes</option>
-                        <option value="Turismo">Agenda turística</option>
-                        <option value="Alojamientos">Alojamientos</option>
-                        <option value="Destinos">Destinos</option>
-                        <option value="Espacios">Espacios naturales</option>
-                        <option value="Restaurantes">Restaurantes</option>
-                    </select>
-                </div>
-                <div class="form-group">               
-                    <select name="provincia" id="provincia" class="form-control">
-                        <option>- Elegir provincia -</option>
-                        <option value="ALAVA">Araba</option>
-                        <option value="BIZKAIA">Bizkaia</option>
-                        <option value="GIPUZKOA">Gipuzkoa</option>
-                        
-                    </select>
-                </div>
-                <div class="form-group">                     
-                    <select name="localidad" id="localidad" class="form-control">
-                        <option>- Elegir localidad -</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <button class="btn btn-success btn-md btn-block">Buscar</button>
-                </div>
-            </fieldset>
-        </form>
+        <table class="table table-striped">
+        <?php
+            foreach ($resultados as $resultado) {
+                if ($_POST["evento"] == "Restaurantes") {
+                    $name = $resultado['name'];
+                    $description = $resultado['description'];
+                    $address = $resultado['address'];
+                    $email = $resultado['email'];
+                    $historicTerritory = $resultado['historicTerritory'];
+                    $menu = $resultado['menu'];
+                    $city = $resultado['city'];
+                    $phone = $resultado['phone'];
+                    $web = $resultado['web'];
+                    echo("<tr>");
+                    echo("<td>" + $name + "</td>");
+                    echo("<td>" + $description + "</td>");
+                    echo("<td>" + $address + "</td>");
+                    echo("<td>" + $email + "</td>");
+                    echo("<td>" + $historicTerritory + "</td>");
+                    echo("<td>" + $menu + "</td>");
+                    echo("<td>" + $city + "</td>");
+                    echo("<td>" + $phone + "</td>");
+                    echo("<td>" + $web + "</td>");
+                    echo("</tr>"); 
+                }
+                if ($_POST["evento"] == "Alojamientos") {
+                    $name = $resultado['name'];
+                    $description = $resultado['description'];
+                    $address = $resultado['address'];
+                    $category = $resultado['category'];
+                    $email = $resultado['email'];
+                    $historicTerritory = $resultado['historicTerritory'];
+                    $type = $resultado['type'];
+                    $city = $resultado['city'];
+                    $phone = $resultado['phone'];
+                    $web = $resultado['web'];
+                    echo($name);
+                    echo("<br>");
+                }
+                if ($_POST["evento"] == "Destinos") {
+                    $name = $resultado['name'];
+                    $description = $resultado['description'];
+                    $address = $resultado['address'];
+                    $historicTerritory = $resultado['historicTerritory'];
+                    $city = $resultado['city'];
+                    $web = $resultado['web'];
+                    echo($name);
+                    echo("<br>");
+                }
+                if ($_POST["evento"] == "Espacios") {
+                    $name = $resultado['name'];
+                    $description = $resultado['description'];
+                    $historicTerritory = $resultado['historicTerritory'];
+                    $city = $resultado['city'];
+                    $type = $resultado['type'];
+                    echo($name);
+                    echo("<br>");
+                }
+                if ($_POST["evento"] == "Jovenes") {
+                    $name = $resultado['name'];
+                    $description = $resultado['description'];
+                    $startDate = $resultado['startDate'];
+                    $endDate = $resultado['endDate'];
+                    $where = $resultado['where'];
+                    echo($name);
+                    echo("<br>");
+                }
+                if ($_POST["evento"] == "Turismo") {
+                    $name = $resultado['name'];
+                    $description = $resultado['description'];
+                    $startDate = $resultado['startDate'];
+                    $endDate = $resultado['endDate'];
+                    $historicTerritory = $resultado['historicTerritory'];
+                    $price = $resultado['price'];
+                    $city = $resultado['city'];
+                    $url = $resultado['url'];
+                    echo($name);
+                    echo("<br>");
+                }
+            }
+        ?>
+        </table>
     </section><!--/#registration-->
 
     <footer id="footer" class="midnight-blue">
