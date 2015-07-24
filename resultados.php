@@ -146,8 +146,8 @@ if ($_POST["evento"] == "Destinos") {
                     <td><?php echo($phone) ?></td>
                     <td><?php echo($web) ?></td>
                 </tr>
-                }
                 <?php
+                }
                 if ($_POST["evento"] == "Alojamientos") {
                     $name = $resultado['name'];
                     $description = $resultado['description'];
@@ -159,7 +159,7 @@ if ($_POST["evento"] == "Destinos") {
                     $city = $resultado['city'];
                     $phone = $resultado['phone'];
                     $web = $resultado['web'];
-                    ?>
+                ?>
                 <tr>
                     <th>Nombre</th>
                     <th>Descripción</th>
@@ -184,8 +184,8 @@ if ($_POST["evento"] == "Destinos") {
                     <td><?php echo($phone) ?></td>
                     <td><?php echo($web) ?></td>
                 </tr>
-                }
                 <?php
+                }
                 if ($_POST["evento"] == "Destinos") {
                     $name = $resultado['name'];
                     $description = $resultado['description'];
@@ -193,7 +193,7 @@ if ($_POST["evento"] == "Destinos") {
                     $historicTerritory = $resultado['historicTerritory'];
                     $city = $resultado['city'];
                     $web = $resultado['web'];
-                    ?>
+                ?>
                 <tr>
                     <th>Nombre</th>
                     <th>Descripción</th>
@@ -216,8 +216,8 @@ if ($_POST["evento"] == "Destinos") {
                     <td><?php echo($phone) ?></td>
                     <td><?php echo($web) ?></td>
                 </tr>
-                }
                 <?php
+                }
                 if ($_POST["evento"] == "Espacios") {
                     $name = $resultado['name'];
                     $description = $resultado['description'];
@@ -247,8 +247,8 @@ if ($_POST["evento"] == "Destinos") {
                     <td><?php echo($phone) ?></td>
                     <td><?php echo($web) ?></td>
                 </tr>
-                }
                 <?php
+                }
                 if ($_POST["evento"] == "Jovenes") {
                     $name = $resultado['name'];
                     $description = $resultado['description'];
@@ -278,8 +278,8 @@ if ($_POST["evento"] == "Destinos") {
                     <td><?php echo($phone) ?></td>
                     <td><?php echo($web) ?></td>
                 </tr>
-                }
                 <?php
+                }
                 if ($_POST["evento"] == "Turismo") {
                     $name = $resultado['name'];
                     $description = $resultado['description'];
@@ -312,6 +312,7 @@ if ($_POST["evento"] == "Destinos") {
                     <td><?php echo($phone) ?></td>
                     <td><?php echo($web) ?></td>
                 </tr>
+                <?php
                 }
             }
         ?>
