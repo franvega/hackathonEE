@@ -146,11 +146,8 @@ if ($_POST["evento"] == "Destinos") {
                     <td><?php echo($phone) ?></td>
                     <td><?php echo($web) ?></td>
                 </tr>
-                <tr>
-                    
-                </tr>
-                <?php
                 }
+                <?php
                 if ($_POST["evento"] == "Alojamientos") {
                     $name = $resultado['name'];
                     $description = $resultado['description'];
@@ -162,9 +159,33 @@ if ($_POST["evento"] == "Destinos") {
                     $city = $resultado['city'];
                     $phone = $resultado['phone'];
                     $web = $resultado['web'];
-                    echo($name);
-                    echo("<br>");
+                    ?>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Dirección</th>
+                    <th>Tipo</th>
+                    <th>Categoria</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Provincia</th>
+                    <th>Teléfono</th>
+                    <th>Web</th>
+                </tr>
+                <tr>
+                    <td><?php echo($name) ?></td>
+                    <td><?php echo($description) ?></td>
+                    <td><?php echo($address) ?></td>
+                    <td><?php echo($type) ?></td>
+                    <td><?php echo($category) ?></td>
+                    <td><?php echo($email) ?></td>
+                    <td><?php echo($city) ?> €</td>
+                    <td><?php echo($historicTerritory) ?></td>
+                    <td><?php echo($phone) ?></td>
+                    <td><?php echo($web) ?></td>
+                </tr>
                 }
+                <?php
                 if ($_POST["evento"] == "Destinos") {
                     $name = $resultado['name'];
                     $description = $resultado['description'];
@@ -172,27 +193,93 @@ if ($_POST["evento"] == "Destinos") {
                     $historicTerritory = $resultado['historicTerritory'];
                     $city = $resultado['city'];
                     $web = $resultado['web'];
-                    echo($name);
-                    echo("<br>");
+                    ?>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Dirección</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Provincia</th>
+                    <th>Precio Menú</th>
+                    <th>Teléfono</th>
+                    <th>Web</th>
+                </tr>
+                <tr>
+                    <td><?php echo($name) ?></td>
+                    <td><?php echo($description) ?></td>
+                    <td><?php echo($address) ?></td>
+                    <td><?php echo($email) ?></td>
+                    <td><?php echo($city) ?></td>
+                    <td><?php echo($historicTerritory) ?></td>
+                    <td><?php echo($menu) ?> €</td>
+                    <td><?php echo($phone) ?></td>
+                    <td><?php echo($web) ?></td>
+                </tr>
                 }
+                <?php
                 if ($_POST["evento"] == "Espacios") {
                     $name = $resultado['name'];
                     $description = $resultado['description'];
                     $historicTerritory = $resultado['historicTerritory'];
                     $city = $resultado['city'];
                     $type = $resultado['type'];
-                    echo($name);
-                    echo("<br>");
+                    ?>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Dirección</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Provincia</th>
+                    <th>Precio Menú</th>
+                    <th>Teléfono</th>
+                    <th>Web</th>
+                </tr>
+                <tr>
+                    <td><?php echo($name) ?></td>
+                    <td><?php echo($description) ?></td>
+                    <td><?php echo($address) ?></td>
+                    <td><?php echo($email) ?></td>
+                    <td><?php echo($city) ?></td>
+                    <td><?php echo($historicTerritory) ?></td>
+                    <td><?php echo($menu) ?> €</td>
+                    <td><?php echo($phone) ?></td>
+                    <td><?php echo($web) ?></td>
+                </tr>
                 }
+                <?php
                 if ($_POST["evento"] == "Jovenes") {
                     $name = $resultado['name'];
                     $description = $resultado['description'];
                     $startDate = $resultado['startDate'];
                     $endDate = $resultado['endDate'];
                     $where = $resultado['where'];
-                    echo($name);
-                    echo("<br>");
+                ?>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Dirección</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Provincia</th>
+                    <th>Precio Menú</th>
+                    <th>Teléfono</th>
+                    <th>Web</th>
+                </tr>
+                <tr>
+                    <td><?php echo($name) ?></td>
+                    <td><?php echo($description) ?></td>
+                    <td><?php echo($address) ?></td>
+                    <td><?php echo($email) ?></td>
+                    <td><?php echo($city) ?></td>
+                    <td><?php echo($historicTerritory) ?></td>
+                    <td><?php echo($menu) ?> €</td>
+                    <td><?php echo($phone) ?></td>
+                    <td><?php echo($web) ?></td>
+                </tr>
                 }
+                <?php
                 if ($_POST["evento"] == "Turismo") {
                     $name = $resultado['name'];
                     $description = $resultado['description'];
@@ -202,8 +289,29 @@ if ($_POST["evento"] == "Destinos") {
                     $price = $resultado['price'];
                     $city = $resultado['city'];
                     $url = $resultado['url'];
-                    echo($name);
-                    echo("<br>");
+                ?>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Dirección</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Provincia</th>
+                    <th>Precio Menú</th>
+                    <th>Teléfono</th>
+                    <th>Web</th>
+                </tr>
+                <tr>
+                    <td><?php echo($name) ?></td>
+                    <td><?php echo($description) ?></td>
+                    <td><?php echo($address) ?></td>
+                    <td><?php echo($email) ?></td>
+                    <td><?php echo($city) ?></td>
+                    <td><?php echo($historicTerritory) ?></td>
+                    <td><?php echo($menu) ?> €</td>
+                    <td><?php echo($phone) ?></td>
+                    <td><?php echo($web) ?></td>
+                </tr>
                 }
             }
         ?>
