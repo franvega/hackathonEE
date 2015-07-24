@@ -1,3 +1,16 @@
+<?php
+$m = new MongoClient("mongodb://alianzo:alianzo@ds047692.mongolab.com:47692/hackathon");
+$db = $m->selectDB('hackathon');
+$destinos = new MongoCollection($db, 'Destinos');
+$query = array('name' => 'Amurrio');
+
+$cursor = $destinos->find($query);
+foreach ($cursor as $doc) {
+    var_dump($doc);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
